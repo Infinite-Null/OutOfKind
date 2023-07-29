@@ -41,7 +41,7 @@ export default function MyBlogs({title,date,discription,name,id,fetchBlog}:{
     className={classes.card}>
       <Card
       onClick={()=>{
-        router.push(`/${id}`)
+        router.push(`/community/${id}`)
       }}
       isPressable
       isHoverable

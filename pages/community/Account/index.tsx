@@ -98,7 +98,7 @@ useEffect(()=>{
     }}>{Data.data?.user?.email}</Text>
   </div>
     <div style={{display:"flex",alignItems:"center",justifyContent:"center",marginTop:"40px",flexDirection:"row"}}>
-      <Text b color="secondary" size='$4xl'>Your Blogs</Text>
+      <Text b color="secondary" size='$4xl'>Your Stories</Text>
     </div>
     {loding===true&&<div style={{height:"70vh", display:"flex",alignItems:"center",justifyContent:"center"}}><Loading size='xl' color='secondary'/></div>}
    {(loding===false)&&<div className={classes.blogs}>

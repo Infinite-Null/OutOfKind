@@ -22,7 +22,7 @@ export default function CardB({title,date,discription,name,id}:{
     className={classes.card}>
       <Card
       onClick={()=>{
-        router.push(`/${id}`)
+        router.push(`/community/${id}`)
       }}
       isPressable
       isHoverable

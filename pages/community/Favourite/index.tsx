@@ -60,7 +60,13 @@ export default function Favourite(){
 
     }
   },[blogs])
-    return <div style={{display:"flex",alignItems:"center",justifyContent:"center",flexDirection:"column"}}>
+    return <div style={{
+      height:"100vh",
+      background:`url("https://www.creativefabrica.com/wp-content/uploads/2021/01/22/Be-Kind-Vector-Graphics-7973873-1-580x387.png")`,
+      backgroundRepeat:"no-repeat",
+      backgroundPosition:"center"
+    }}>
+      <div style={{display:"flex",alignItems:"center",justifyContent:"center",flexDirection:"column",}}>
     <Quote title1='Your Liking' title2='Is what defines you.'/>
     {(loding===true)&&<div style={{height:"80vh", display:"flex",alignItems:"center",justifyContent:"center"}}><Loading size='xl' color='secondary'/></div>}
     {(loding===false)&&(Data.status!=='loading')&&(Data.status==='unauthenticated')?<Button css={
@@ -77,4 +83,5 @@ export default function Favourite(){
     </div>
     }
   </div>
+    </div>
 }

@@ -8,9 +8,7 @@ export default function App() {
   const collapseItems = [
     "Home",
     "Create",
-    "Favourite",
-    "About",
-  ];
+    "Favourite",];
   const Data:any=useSession()
   const ref:any = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
@@ -39,7 +37,7 @@ export default function App() {
         }
         if(actionKey==='settings')
         {
-          router.push('/Account')
+          router.push('/community/Account')
         }
       }}
     >
@@ -114,7 +112,7 @@ export default function App() {
               <Link
               onClick={handleClick}
                 color="inherit"
-                href={(item=='Home')?"/community":`/community${item}`}>
+                href={(item=='Home')?"/community":`/community/${item}`}>
                 {item}
               </Link>
             </Navbar.CollapseItem>
