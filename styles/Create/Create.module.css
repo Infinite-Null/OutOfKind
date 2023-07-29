@@ -1,0 +1,101 @@
+.bLogContainer{
+ padding-left: 150px;
+ padding-right: 150px;
+ padding-top: 60px;
+ width: 95vw;
+}
+
+.comment{
+   padding-left: 150px;
+   padding-right: 150px;
+   padding-top: 60px;
+   width: 100%;
+   height: 350px;
+   margin-top: 30px;
+   margin-bottom: 80px;
+}
+
+@media screen and (max-width:950px) {
+   .bLogContainer{
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 60px;
+      width: 95vw;
+     }
+     .comment{
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 60px;
+     }
+}
+@media screen and (max-width:550px) {
+   .bLogContainer{
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 60px;
+      width: 95vw;
+     }
+     .comment{
+      padding-left: 10px;
+      padding-right: 10px;
+      padding-top: 60px;
+     }
+}
+.contain{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    gap: 20px;
+    height: 60vh;
+    width: 25vw;
+    justify-content: center;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+.dis{
+    outline: none;
+    border: 2px solid rgba(128, 128, 128, 0.356);
+    transition: 0.2s;
+    padding: 20px;
+    border-radius: 30px;
+    font-size: 20px;
+    height: 200px;
+}
+.dis:hover{
+   border:2px solid  rgb(126, 36, 190);  
+}
+.dis:focus{
+    border:2px solid  rgb(126, 36, 190);  
+ }
+ .title{
+    margin: 0px;
+    margin-left: 15px;
+    color: rgb(142, 142, 142);
+    font-size: 20px;
+ }
+ .imageConatiner{
+    height: 60vh;
+    width: 45vw;
+    background-image: url("https://media.istockphoto.com/id/654207022/vector/girl-with-cat.jpg?s=612x612&w=0&k=20&c=KRhkIXzqxYVhdGq3EtTJ6nrBlkku2FE5MpN6N1pn1kg=");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+ }
+ @media screen and (max-width:1150px) {
+    .contain{
+        width: 45vw;
+    }
+ }
+ @media screen and (max-width:950px) {
+    .imageConatiner{
+       display: none;
+     }
+ }
+ @media screen and (max-width:700px) {
+    .contain{
+        width: 85vw;
+    }
+ }

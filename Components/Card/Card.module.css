@@ -1,0 +1,10 @@
+.card{
+width: 35vw;
+flex-basis: 45%;
+}
+@media screen and (max-width:1150px) {
+    .card{
+        width: 100vw;
+        flex-basis: 100%;
+    }
+}
