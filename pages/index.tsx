@@ -1,3 +1,18 @@
+import { Link } from "@nextui-org/react"
+import { useEffect } from "react"
+
 export default function App(){
-    return <h1>Hi</h1>
+    async function Fetch(){
+      
+    }
+    useEffect(()=>{
+        Fetch()
+        return()=>{
+
+        }
+    })
+    return <>
+    <Link href="/community">Community</Link><br/>
+    <Link href="/Search">Search</Link>
+    </>
 }

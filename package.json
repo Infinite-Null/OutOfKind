@@ -17,6 +17,7 @@
     "bcrypt": "^5.1.0",
     "dayjs": "^1.11.9",
     "framer-motion": "^10.13.0",
+    "googlethis": "^1.7.1",
     "jsonwebtoken": "^9.0.1",
     "mongoose": "^7.3.4",
     "next": "13.4.10",
