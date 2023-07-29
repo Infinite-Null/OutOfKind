@@ -10,6 +10,6 @@ export default function Heading(){
     }}
     weight="bold"
   >
-    Out Of Kind
+    Out Of Kind ✨
   </Text>
 }
