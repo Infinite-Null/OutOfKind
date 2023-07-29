@@ -36,7 +36,7 @@ export default function create(){
           Authorization:`Bearer ${Data.data.user.token}`
         }
       })
-      setMessage(()=>"Blog Created Successfully...")
+      setMessage(()=>"Story was shared successfully")
       setVisible(()=>true)
       setGood(()=>true)
     }catch (e){

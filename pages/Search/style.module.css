@@ -1,6 +1,10 @@
 .container{
+    display:flex;
+    align-items:center;
+    justify-content:center;
     width:60vw;
     margin-top:10px;
+    flex-wrap: wrap;
 }
 @media screen and (max-width:810px) {
     .container{

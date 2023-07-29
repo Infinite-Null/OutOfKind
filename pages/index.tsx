@@ -12,7 +12,5 @@ export default function App(){
         }
     })
     return <>
-    <Link href="/community">Community</Link><br/>
-    <Link href="/Search">Search</Link>
     </>
 }

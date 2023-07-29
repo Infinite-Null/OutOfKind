@@ -1,20 +1,21 @@
-import { Navbar, Text, Avatar, Dropdown, Button} from "@nextui-org/react";
+import { Navbar, Text, Avatar, Dropdown} from "@nextui-org/react";
 import Link from "next/link";
 import { Layout } from "./Layout";
 import { useSession,signOut } from "next-auth/react";
 import { useRouter } from "next/router";
 import { useRef, useState } from "react";
-export default function App() {
+export default function MainScreenNav() {
   const collapseItems = [
-    "Stories",
-    "Create",
-    "Favourite",];
+    "Community",
+    "Search",
+    "Create",];
   const Data:any=useSession()
   const ref:any = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
-  const router=useRouter()
+
   const handleClick = () => isOpen && ref.current!.click();
   function userProfile(email:string){
+     const router=useRouter()
     return <Dropdown placement="bottom-right">
     <Navbar.Item>
       <Dropdown.Trigger>
@@ -34,10 +35,6 @@ export default function App() {
         if(actionKey==="logout"){
           signOut()
         }
-        if(actionKey==='settings')
-        {
-          router.push('/community/Account')
-        }
       }}
     >
       <Dropdown.Item key="profile" css={{ height: "$18" }}>
@@ -47,9 +44,6 @@ export default function App() {
         <Text b color="inherit" css={{ d: "flex" }}>
           {email}
         </Text>
-      </Dropdown.Item>
-      <Dropdown.Item key="settings" withDivider>
-        Your Profile
       </Dropdown.Item>
       <Dropdown.Item key="logout" withDivider color="error">
         Log Out
@@ -62,9 +56,7 @@ export default function App() {
       <Navbar isBordered variant="sticky">
         <Navbar.Toggle showIn="xs" ref={ref}
           onChange={(isSelected:any) => setIsOpen(()=>isSelected)}/>
-        <Button auto ghost color="secondary" onClick={()=>{
-          router.push('/')
-        }}>Home</Button>
+        <Text b>Donate With Kind</Text>
         <Navbar.Content
           enableCursorHighlight
           activeColor="secondary"
@@ -76,19 +68,25 @@ export default function App() {
             fontSize:"20px",
             paddingLeft:"20px",
             color:"black"
-          }} href="/community">Stories</Link>
+          }} href="/">Home</Link>
           <Link style={{
             padding:"2px",
             fontSize:"20px",
             paddingLeft:"20px",
             color:"black"
-          }} href="/community/Create">Create</Link>
+          }} href="/Create">Create</Link>
           <Link style={{
             padding:"2px",
             fontSize:"20px",
             paddingLeft:"20px",
             color:"black"
-          }} href="/community/Favourite">Favourite</Link>
+          }} href="/community">Community</Link>
+          <Link style={{
+            padding:"2px",
+            fontSize:"20px",
+            paddingLeft:"20px",
+            color:"black"
+          }} href="/Search">Search</Link>
         </Navbar.Content>
         <Navbar.Content
           css={{
@@ -113,7 +111,7 @@ export default function App() {
               <Link
               onClick={handleClick}
                 color="inherit"
-                href={(item=='Home')?"/community":`/community/${item}`}>
+                href={(item=='Community')?"/community":`/${item}`}>
                 {item}
               </Link>
             </Navbar.CollapseItem>
