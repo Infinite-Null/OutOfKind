@@ -1,0 +1,138 @@
+.main{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 30vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-top: 100px;
+}
+.Left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.Quote{
+    border: 0.5cap solid transparent;
+    font-size: 4.5vw;
+    font-weight: 900;
+}
+.Discription{
+    border: 1.5cap solid transparent;
+    font-size: 1.5vw;
+    font-weight: 100;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.LeftButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1.5cap;
+    text-decoration: none;
+    font-size: 1vw;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 20px;
+    height: 3.3vw;
+    outline: none;
+    border: 4px solid transparent;
+    transition: 0.5s;
+    color: white;
+    background-color: rgb(161, 35, 250);
+    font-weight: 600;
+    width: fit-content;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.569);
+}
+.LeftButton:hover{
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.224);
+    translate: -10px -5px;
+}
+.Right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.image{
+    border: 2px solid black;
+    width: 80%;
+    height: 80%;
+    border-radius: 30px;
+}
+
+@media screen and (max-width:1000px) {
+    .main{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 40vw;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 100px;
+    }
+    .LeftButton{
+        font-size: 2.2vw;
+        height: 50px;
+        margin-left: 1cap;
+    }
+    .Discription{
+        font-size: 2vw;
+    }
+}
+@media screen and (max-width:800px) {
+    .main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        margin-top: 100px;
+    }
+    .LeftButton{
+        font-size: 4.2vw;
+        height: 60px;
+        margin-left: 1cap;
+    }
+    .Quote{
+        border: 0.5cap solid transparent;
+        font-size: 7.5vw;
+        font-weight: 900;
+    }
+    .Discription{
+        border: 1.5cap solid transparent;
+        font-size: 4vw;
+        font-weight: 100;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    .image{
+        width: 90vw;
+        height: 40vh;
+    }
+}
+@media screen and (max-width:600px){
+    .LeftButton{
+        font-size: 3.2vw;
+        height: 60px;
+        margin-left: 1cap;
+    }
+    .Quote{
+        border: 0.5cap solid transparent;
+        font-size: 8.5vw;
+        font-weight: 900;
+        padding-left: 20px;
+    }
+    .Discription{
+        border: 1.5cap solid transparent;
+        font-size: 5vw;
+        font-weight: 100;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        padding-left: 20px;
+    }
+    .LeftButton{
+        margin-left: 10px;
+        margin-top: 10px;
+    }
+}
+@media screen and (max-width:450px){
+    .LeftButton{
+        font-size: 4.7vw;
+        height: 60px;
+        margin-left: 1.5cap;
+    }
+}
