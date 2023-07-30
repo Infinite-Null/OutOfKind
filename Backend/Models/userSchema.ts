@@ -21,6 +21,10 @@ const UserSchema=new mongoose.Schema({
     myBlog:[{
         type: mongoose.Types.ObjectId,
         ref:'blogs',
+    }],
+    myDonations:[{
+        type: mongoose.Types.ObjectId,
+        ref:'donation',
     }]
 })
 

@@ -46,7 +46,7 @@
     flex-direction: column;
     width: 400px;
     gap: 20px;
-    height: 60vh;
+    height: fit-content;
     width: 25vw;
     justify-content: center;
 }
@@ -84,6 +84,14 @@
     background-position: center;
     background-repeat: no-repeat;
  }
+ .imageConatiner2{
+   height: 60vh;
+   width: 45vw;
+   background-image: url("https://previews.123rf.com/images/olgastrelnikova/olgastrelnikova2201/olgastrelnikova220100009/181164357-donation-charity-foundation-template-diversity-human-hands-forming-circle-give-heart-shapes.jpg");
+   background-size: contain;
+   background-position: center;
+   background-repeat: no-repeat;
+}
  @media screen and (max-width:1150px) {
     .contain{
         width: 45vw;
@@ -93,6 +101,9 @@
     .imageConatiner{
        display: none;
      }
+     .imageConatiner2{
+      display: none;
+    }
  }
  @media screen and (max-width:700px) {
     .contain{

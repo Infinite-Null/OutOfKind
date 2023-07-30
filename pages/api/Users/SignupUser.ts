@@ -39,7 +39,8 @@ export default async function handler(
                         email:Email,
                         password:hash,
                         liked:[],
-                        myBlog:[]
+                        myBlog:[],
+                        myDonations:[]
                     })
                     User.save().then((doc:any)=>{
                         const respose:any={
