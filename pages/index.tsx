@@ -1,3 +1,4 @@
+import DonationCard from "@/Components/DonationCard/DonationCard"
 import Section1 from "@/Components/Section1/MainSection1"
 import Section2 from "@/Components/Section2/MainSection1"
 import { Text } from "@nextui-org/react"
@@ -18,6 +19,25 @@ export default function App(){
     <Section2 image={`url("https://img.freepik.com/premium-vector/woman-pointing-web-browser-online-search-engine-bars-seo-optimization-concept-illustration_270158-291.jpg")`} title="Search" discription="Here you can for nearby ngo and there details." Toref="/Search" button="Search Now"/>
      <center style={{
         marginTop:"30px"
-     }}> <Text b size='$7xl'>Donations</Text></center>
+     }}><Text b size='$7xl'>Donations</Text></center>
+     <div style={{
+        margin:"20px"
+     }}>
+     <div style={{
+        display:"flex",
+        alignItems:"center",
+        justifyContent:"center",
+        flexWrap:"wrap",
+        gap:"20px"
+     }}>
+     <DonationCard/>
+     <DonationCard/>
+     <DonationCard/>
+     <DonationCard/>
+     <DonationCard/>
+     <DonationCard/>
+     <DonationCard/>
+     </div>
+     </div>
     </>
 }
