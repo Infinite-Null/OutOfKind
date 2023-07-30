@@ -35,8 +35,6 @@ export default function App(){
      <DonationCard/>
      <DonationCard/>
      <DonationCard/>
-     <DonationCard/>
-     <DonationCard/>
      </div>
      </div>
     </>

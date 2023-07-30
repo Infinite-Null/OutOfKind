@@ -1,0 +1,20 @@
+.Conatiner{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+.Discrip{
+    width: 600px;
+}
+@media screen and (max-width:835px) {
+    .Conatiner{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .Discrip{
+        width: 90vw;
+    }
+}

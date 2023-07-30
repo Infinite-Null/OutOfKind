@@ -26,7 +26,7 @@ export default function DonationCard() {
     <Card.Divider />
     <Card.Footer>
       <Row justify="flex-end">
-       <Text b color='secondary' css={{
+       <Text b color='green' css={{
         paddingRight:"10px"
        }}>Avaliable</Text>
         <Button size="sm" >Details</Button>
