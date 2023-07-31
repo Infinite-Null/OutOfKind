@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function DonationCard() {
   return (<Card isHoverable css={{ mw: "330px", border:"2px solid black"}}>
-    <Card.Image src='https://imageio.forbes.com/specials-images/imageserve/5f85be4ed0acaafe77436710/0x0.jpg?format=jpg&width=1200' alt="Not Found">
+    <Card.Image src='https://i0.wp.com/www.michigandaily.com/wp-content/uploads/2019/03/amc.ART_.Textbook.3.27.19.0010.jpg?fit=720%2C480&ssl=1' alt="Not Found">
 
     </Card.Image>
     <Card.Header>

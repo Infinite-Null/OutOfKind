@@ -16,7 +16,7 @@ export default function App(){
     })
     return <>
     <Section1 image={`url("https://images.pond5.com/happy-employees-connect-jigsaw-puzzles-illustration-201396481_iconl_nowm.jpeg")`} title="Community" discription="Here you can share your story of something good you have done and encourage others to do the same." Toref="/community" button="Connect Now"/>
-    <Section2 image={`url("https://img.freepik.com/premium-vector/woman-pointing-web-browser-online-search-engine-bars-seo-optimization-concept-illustration_270158-291.jpg")`} title="Search" discription="Here you can for nearby ngo and there details." Toref="/Search" button="Search Now"/>
+    <Section2 image={`url("https://img.freepik.com/premium-vector/woman-pointing-web-browser-online-search-engine-bars-seo-optimization-concept-illustration_270158-291.jpg")`} title="Search" discription="Here you can search for nearby ngo and there details." Toref="/Search" button="Search Now"/>
      <center style={{
         marginTop:"30px"
      }}><Text b size='$7xl'>Donations</Text></center>

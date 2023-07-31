@@ -4,9 +4,9 @@ import classes from '../styles/detailPage/detail.module.css'
 import { motion } from 'framer-motion'
 export default function Details() {
   const[number,setNumber]=useState(0)
- const images=['https://imageio.forbes.com/specials-images/imageserve/5f85be4ed0acaafe77436710/0x0.jpg?format=jpg&width=1200',
-  'https://imageio.forbes.com/specials-images/imageserve/5f85be4ed0acaafe77436710/0x0.jpg?format=jpg&width=1200',
-  'https://imageio.forbes.com/specials-images/imageserve/5f85be4ed0acaafe77436710/0x0.jpg?format=jpg&width=1200'
+ const images=['https://i0.wp.com/www.michigandaily.com/wp-content/uploads/2019/03/amc.ART_.Textbook.3.27.19.0010.jpg?fit=720%2C480&ssl=1',
+  'https://i0.wp.com/www.michigandaily.com/wp-content/uploads/2019/03/amc.ART_.Textbook.3.27.19.0010.jpg?fit=720%2C480&ssl=1',
+  'https://i0.wp.com/www.michigandaily.com/wp-content/uploads/2019/03/amc.ART_.Textbook.3.27.19.0010.jpg?fit=720%2C480&ssl=1'
 ]
   function Change(){
     return <motion.div

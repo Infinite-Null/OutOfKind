@@ -3,10 +3,13 @@ import { Input, Grid, Button, Loading, Text } from "@nextui-org/react";
 import classes from "../styles/Create/Create.module.css"
 import { useSession } from "next-auth/react";
 import { useRouter } from 'next/navigation';
+import { useState } from "react";
 export default function create(){
   const Data:any=useSession()
   const router=useRouter()
-
+  const [image1,SetImage1]=useState({})
+  const [image2,SetImage2]=useState({})
+  const [image3,SetImage3]=useState({})
 
     return <>
     <Quote title1="Share Your" title2="Kind story."/>
@@ -58,7 +61,7 @@ export default function create(){
       />
       <Text>Select 3 images of item</Text>
      <div style={{display:"flex",flexDirection:"row",gap:"10px"}}>
-     <input type="file"/>
+     <input type="file" onChange={(e)=>SetImage1(()=>e.target.files)}/>
      <input type="file"/>
      <input type="file"/>
      </div>
