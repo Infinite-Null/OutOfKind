@@ -48,7 +48,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
 
    if(req.method==='POST'){
-    const{users,title,discription,address,contact,image1,image2,image3,avaliable}=req.body
     const n={
      ...req.body
     }

@@ -38,7 +38,7 @@ export default function create(){
     "image1":link1,
     "image2":link2,
     "image3":link3,
-    "avaliable":false
+    "avaliable":true
 },
 {
   headers:{
