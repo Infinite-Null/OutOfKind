@@ -2,12 +2,11 @@ import { Pagination, Text } from '@nextui-org/react'
 import React,{useState} from 'react'
 import classes from '../styles/detailPage/detail.module.css'
 import { motion } from 'framer-motion'
+import { useRouter } from 'next/router'
 export default function Details() {
+  const router:any=useRouter()
   const[number,setNumber]=useState(0)
- const images=['https://i0.wp.com/www.michigandaily.com/wp-content/uploads/2019/03/amc.ART_.Textbook.3.27.19.0010.jpg?fit=720%2C480&ssl=1',
-  'https://i0.wp.com/www.michigandaily.com/wp-content/uploads/2019/03/amc.ART_.Textbook.3.27.19.0010.jpg?fit=720%2C480&ssl=1',
-  'https://i0.wp.com/www.michigandaily.com/wp-content/uploads/2019/03/amc.ART_.Textbook.3.27.19.0010.jpg?fit=720%2C480&ssl=1'
-]
+ const images:any=[router.query.image1,router.query.image2,router.query.image3]
   function Change(){
     return <motion.div
     initial={{
@@ -36,7 +35,7 @@ export default function Details() {
      </motion.div>
   }
   return <>
-  <center><Text b size='$5xl'>Book</Text></center>
+  <center><Text b size='$5xl'>{router.query.title}</Text></center>
   <div className={classes.Conatiner}>
    <div>
    <Change key={number}/>
@@ -46,19 +45,19 @@ export default function Details() {
    }}/>
    </div>
   <div className={classes.Discrip}>
-   <Text b size='$2xl'>A book description is a short summary of a book's story or content that is designed to “hook” a reader and lead to a sale. Typically, the book's description conveys important information about its topic or focus (in nonfiction) or the plot and tone (for a novel or any other piece of fiction).</Text><br/><br/>
-   <Text b>By: Ankit Kumar Shah</Text>
+   <Text b size='$2xl'>{router.query.discription}</Text><br/><br/>
+   <Text b>{`by: ${router.query.UserName}`}</Text>
    <br/><br/>
    <div style={{
     border:"2px solid rgba(0,0,0,0.2)",
     borderRadius:"20px",
     padding:"20px"
    }}>
-   <Text  size='$1xl'>Sanikpuri, Khaprail p/o New Chumpta</Text>
-   <Text >Contact: 7478856289</Text>
+   <Text  size='$1xl'>{router.query.address}</Text>
+   <Text >{`Contact: ${router.query.contact}`}</Text>
    </div>
    <br/><br/>
-   <Text  size='$2xl' color='green'>Avaliable</Text>
+   <Text  size='$2xl' color={(router.query.ava===true)?'green':'secondary'}>{(router.query.ava===true)?"Available":"Donated"}</Text>
   </div>
     </div>
   </>

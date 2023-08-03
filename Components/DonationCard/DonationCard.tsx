@@ -1,7 +1,9 @@
 import { Button, Card, Row, Text } from '@nextui-org/react'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 import React from 'react'
 
-export default function DonationCard({image1,image2,image3,title,discription,UserName,ava,_id}:{
+export default function DonationCard({image1,image2,image3,title,discription,UserName,ava,_id,contact,address}:{
   image1:string,
   image2:string,
   image3:string,
@@ -10,7 +12,10 @@ export default function DonationCard({image1,image2,image3,title,discription,Use
   UserName:string,
   ava:any,
   _id:string,
+  contact:string,
+  address:string
 }) {
+  const router=useRouter()
   return (<Card isHoverable css={{ mw: "330px", border:"2px solid black"}}>
     <Card.Image src={image1} alt="Not Found">
 
@@ -37,7 +42,18 @@ export default function DonationCard({image1,image2,image3,title,discription,Use
        <Text b color={(ava===true)?"green":"secondary"} css={{
         paddingRight:"10px"
        }}>{(ava===true)?"Available":"Donated"}</Text>
-        <Button size="sm" >Details</Button>
+        <Link style={{
+          marginLeft:"10px",
+          marginRight:"10px",
+          paddingLeft:"20px",
+          paddingRight:"20px",
+          borderRadius:"10px",
+          backgroundColor:"blue",
+          color:"white"
+        }} href={{
+          pathname:'/'+_id,
+          query:{image1,image2,image3,title,discription,UserName,ava,_id,contact,address}
+        }}>Details</Link>
       </Row>
     </Card.Footer>
   </Card>
