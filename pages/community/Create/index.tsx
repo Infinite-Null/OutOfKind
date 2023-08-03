@@ -64,7 +64,7 @@ export default function create(){
         bordered
         size="xl"
         labelLeft="Title"
-        placeholder="Rain In Hell"
+        placeholder="A kind one"
         clearable
         color="secondary"
         onChange={(e)=>{

@@ -1,61 +1,81 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { promises as fs } from "fs";
-import path from "path";
-import formidable, { File } from 'formidable';
-const mv=require('mv')
-export const config = {
-    api: {
-        bodyParser: false,
-    }
-};
-
-type ProcessedFiles = Array<[string, File]>;
+const Donation = require("../../../Backend/Models/donationsSchema")
+const user = require("../../../Backend/Models/userSchema")
+import mongoose from 'mongoose'
+import VerifyToken from '@/Backend/Utils/middleWare';
+import connectMongo from '@/Backend/Utils/connect';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-
-    let status = 200,
-        resultBody = { status: 'ok', message: 'Files were uploaded successfully' };
-
-    /* Get files using formidable */
-    const files = await new Promise<ProcessedFiles | undefined>((resolve, reject) => {
-        const form = formidable();
-        const files: ProcessedFiles = [];
-        form.on('file', function (field, file) {
-            files.push([field, file]);
+    connectMongo()
+    if(req.method=='GET'){
+        const {UserId}=req.query
+        user.findOne({_id:UserId}).select("myDonations").populate({
+            path:"myDonations",
+            populate:{
+                path:"users",
+                select:"name"
+            }
+        }).then((doc:any)=>{
+            const response:any={
+                message:"success",
+                details:doc
+            }
+            return  res.status(200).json(response)
+        }).catch((e:any)=>{
+            console.log(e)
+            return
         })
-        form.on('end', () => resolve(files));
-        form.on('error', err => reject(err));
-        form.parse(req, () => {
-            //
-        });
-    }).catch(e => {
-        console.log(e);
-        status = 500;
-        resultBody = {
-            status: 'fail', message: 'Upload error'
-        }
-    });
-    if (files?.length) {
-
-        /* Create directory for uploads */
-        const targetPath = path.join(process.cwd(), `/uploads/`);
-        try {
-            await fs.access(targetPath);
-        } catch (e) {
-            await fs.mkdir(targetPath);
-        }
-
-        /* Move uploaded files to directory */
-        for (const file of files) {
-            const tempPath = file[1].filepath;
-            const filepath=targetPath + file[1].originalFilename
-            mv(tempPath, targetPath + file[1].originalFilename,function (err:any) {
-                if(err) console.log(err)
-                console.log(filepath)
-                res.status(status).json(resultBody);
-              });
-        }
+        return
     }
+    const header = req.headers['authorization'];
+    if(typeof header !== 'undefined') {
+        const bearer = header.split(' ');
+        const token = bearer[1];
+        if(VerifyToken(token)===false){
+            const response:any={
+                message:"failed",
+                details:"token invaild"
+            }
+            return  res.status(403).json(response)
+        }
+    } else {
+        const response:any={
+            message:"failed",
+            details:"token invaild"
+        }
+        return  res.status(403).json(response)
+    }
+
+
+   if(req.method==='POST'){
+    const{users,title,discription,address,contact,image1,image2,image3,avaliable}=req.body
+    const n={
+     ...req.body
+    }
+    n._id=new mongoose.Types.ObjectId()
+    const newDonation=new Donation(n)
+    newDonation.save().then((doc:any)=>{
+       user.updateOne({_id:n.users},{$push:{myDonations:n._id}}).then((doc1:any)=>{
+        const response:any={
+          message:"Success",
+          detail:doc,
+        }
+        res.status(200).json(response)
+      }).catch((e:any)=>console.log(e))
+    }).catch((e:any)=>console.log(e))
+   }
+  if(req.method==='PATCH'){
+    const {DonationId}=req.query
+    const {value}=req.body
+    Donation.updateOne({_id:DonationId},{avaliable:value}).then((doc:any)=>{
+        const response:any={
+            message:"Success",
+            detail:doc,
+          }
+          res.status(200).json(response)
+    }).catch((e:any)=>{console.log(e)})
+
+  }
 }
 
 export default handler;
