@@ -35,6 +35,9 @@ export default function MainScreenNav() {
         if(actionKey==="logout"){
           signOut()
         }
+        if(actionKey==="donations"){
+          router.push('/donations')
+        }
       }}
     >
       <Dropdown.Item key="profile" css={{ height: "$18" }}>
@@ -45,9 +48,13 @@ export default function MainScreenNav() {
           {email}
         </Text>
       </Dropdown.Item>
+      <Dropdown.Item key="donations" withDivider color="secondary">
+        Manage Your Donations
+      </Dropdown.Item>
       <Dropdown.Item key="logout" withDivider color="error">
         Log Out
       </Dropdown.Item>
+     
     </Dropdown.Menu>
   </Dropdown>
   }

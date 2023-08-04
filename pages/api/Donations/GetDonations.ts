@@ -5,7 +5,7 @@ import connectMongo from '@/Backend/Utils/connect';
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     connectMongo()
     if(req.method=='GET'){
-     Donation.find().populate("users","name").then((doc:any)=>{
+     Donation.find({}).populate("users","name").then((doc:any)=>{
         const response:any={
             message:"success",
             details:doc

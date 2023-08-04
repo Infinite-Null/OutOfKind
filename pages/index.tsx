@@ -85,7 +85,7 @@ export default function App(){
      }}>
       {(data.details.length===0)&&<Text>Be the frist one to donate</Text>}
    {(loding)&&<div style={{height:"60vh",display:"flex",alignItems:"center",justifyContent:"center"}}><Loading size="xl" color='secondary'/></div>}
-     {(data.details.length!=0)&&!loding&&data.details.map((e)=><DonationCard title={e.title} discription={e.discription} image1={e.image1} image2={e.image2} image3={e.image3} UserName={e.users.name} ava={e.avaliable} _id={e._id} contact={e.contact} address={e.address}/>)}
+     {(data.details.length!=0)&&!loding&&data.details.map((e,i)=><DonationCard title={e.title} discription={e.discription} image1={e.image1} image2={e.image2} image3={e.image3} UserName={e.users.name} ava={e.avaliable} _id={e._id} contact={e.contact} address={e.address} key={i}/>)}
      </div>
      </div>
     </>
