@@ -27,14 +27,16 @@ export default function DonationCardAccount({image1,title,discription,UserName,a
     fetch()
     setLoding(()=>false)
   }
-  return (<Card isHoverable css={{ mw: "330px", border:"2px solid black"}}>
-    <Card.Image src={image1} alt="Not Found">
+  return (
+  <div>
+    <Card isHoverable css={{ mw: "330px", border:"2px solid black"}}>
+    <Card.Image src={image1} alt="Not Found" width="400px" height="200px" objectFit='cover'>
     </Card.Image>
     <Card.Header>
       <Text b>{title}</Text>
     </Card.Header>
     <Card.Divider />
-    <Card.Body css={{ py: "$10" }}>
+    <Card.Body css={{ py: "$10" ,height:"220px",overflow:"scroll"}}>
       <Text>
        {discription}
       </Text>
@@ -58,5 +60,6 @@ export default function DonationCardAccount({image1,title,discription,UserName,a
       </Row>
     </Card.Footer>
   </Card>
+  </div>
   )
 }

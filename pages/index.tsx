@@ -51,6 +51,7 @@ export default function App(){
   const [loding,setLoding]=useState(false)
 
     async function Fetch(){
+      setLoding(()=>true)
       try{
       const response=await axios.get('/api/Donations/GetDonations')
       const FinalData=response.data
@@ -58,11 +59,10 @@ export default function App(){
       }catch (e){
          console.log(e)
       }
+      setLoding(()=>false)
     }
     useEffect(()=>{
-        setLoding(()=>true)
         Fetch()
-        setLoding(()=>false)
         return()=>{
 
         }

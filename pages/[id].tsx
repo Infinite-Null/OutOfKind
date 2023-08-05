@@ -34,6 +34,7 @@ export default function Details() {
       />
      </motion.div>
   }
+  console.log(router.query.ava)
   return <>
   <center><Text b size='$5xl'>{router.query.title}</Text></center>
   <div className={classes.Conatiner}>
@@ -57,7 +58,7 @@ export default function Details() {
    <Text >{`Contact: ${router.query.contact}`}</Text>
    </div>
    <br/><br/>
-   <Text  size='$2xl' color={(router.query.ava===true)?'green':'secondary'}>{(router.query.ava===true)?"Available":"Donated"}</Text>
+   <Text  size='$2xl' color={(router.query.ava==="true")?'green':'secondary'}>{(router.query.ava==="true")?"Available":"Donated"}</Text>
   </div>
     </div>
   </>

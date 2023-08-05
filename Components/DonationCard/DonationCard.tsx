@@ -17,14 +17,14 @@ export default function DonationCard({image1,image2,image3,title,discription,Use
 }) {
   const router=useRouter()
   return (<Card isHoverable css={{ mw: "330px", border:"2px solid black"}}>
-    <Card.Image src={image1} alt="Not Found">
+    <Card.Image src={image1} alt="Not Found" width="400px" height="200px" objectFit='cover'>
 
     </Card.Image>
     <Card.Header>
       <Text b>{title}</Text>
     </Card.Header>
     <Card.Divider />
-    <Card.Body css={{ py: "$10" }}>
+    <Card.Body css={{ py: "$10", height:"220px",overflow:"scroll"}}>
       <Text>
        {discription}
       </Text>
