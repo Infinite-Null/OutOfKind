@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import { useRef, useState } from "react";
 export default function MainScreenNav() {
   const collapseItems = [
+    "Home",
     "Community",
     "Search",
     "Create",];
@@ -118,7 +119,7 @@ export default function MainScreenNav() {
               <Link
               onClick={handleClick}
                 color="inherit"
-                href={(item=='Community')?"/community":`/${item}`}>
+                href={(item=='Community')?"/community":(item=='Home')?'/':`/${item}`}>
                 {item}
               </Link>
             </Navbar.CollapseItem>
