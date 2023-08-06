@@ -36,7 +36,7 @@ Now the server is running in http://localhost:3000/
 
 ##Screenshot
 
-![Screenshot (68)](https://github.com/Infinite-Null/OutOfKind/assets/97950192/a982d8fe-589a-439e-946b-dbcece683d2f)![Screenshot (69)](https://github.com/Infinite-Null/OutOfKind/assets/97950192/89c9fd1d-93fd-4e4a-9c0d-1fe3b99891f9)![Screenshot (70)](https://github.com/Infinite-Null/OutOfKind/assets/97950192/aa8d26db-d47c-4fd9-934e-0c0ca2817d0a)![Screenshot (71)](https://github.com/Infinite-Null/OutOfKind/assets/97950192/35be66b8-59f6-4f94-b067-d1c114c04593)![Screenshot (72)](https://github.com/Infinite-Null/OutOfKind/assets/97950192/bf9e772f-a23c-49a0-a2eb-9770f53ef957)
+![Screenshot (68)](https://github.com/Infinite-Null/OutOfKind/assets/97950192/a982d8fe-589a-439e-946b-dbcece683d2f)![Screenshot (70)](https://github.com/Infinite-Null/OutOfKind/assets/97950192/aa8d26db-d47c-4fd9-934e-0c0ca2817d0a)![Screenshot (71)](https://github.com/Infinite-Null/OutOfKind/assets/97950192/35be66b8-59f6-4f94-b067-d1c114c04593)![Screenshot (72)](https://github.com/Infinite-Null/OutOfKind/assets/97950192/bf9e772f-a23c-49a0-a2eb-9770f53ef957)![Screenshot (69)](https://github.com/Infinite-Null/OutOfKind/assets/97950192/89c9fd1d-93fd-4e4a-9c0d-1fe3b99891f9)
 
 
 ## Features
