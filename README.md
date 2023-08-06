@@ -1,6 +1,5 @@
 # Out of kind
-![20230806_231527](https://github.com/Infinite-Null/OutOfKind/assets/97950192/7c2b907f-03ab-4394-bc6b-ea90b3640a40)
-
+![20230806_231527](https://github.com/Infinite-Null/OutOfKind/assets/97950192/0b32d470-39c1-4377-92f2-ad8519aa2114)
 
 
 ## Live Link
