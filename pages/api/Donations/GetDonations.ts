@@ -3,7 +3,7 @@ const Donation = require("../../../Backend/Models/donationsSchema")
 import connectMongo from '@/Backend/Utils/connect';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-    connectMongo()
+    await connectMongo()
     if(req.method=='GET'){
      Donation.find({}).populate("users","name").then((doc:any)=>{
         const response:any={
